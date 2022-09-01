@@ -1,0 +1,174 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+$font-text: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+html{
+    box-sizing: border-box;
+    font-family: $font-text;
+}
+
+
+.left,
+.right{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: darkred;
+    z-index: -1;
+
+    animation: openCourtain 2s ease-out 1s forwards;
+}
+
+.right{
+    text-align: right;
+    right: 0%;
+}
+
+.center{
+    z-index: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 2rem 5rem;
+    background-color: rgb(195, 150, 74);
+}
+
+@keyframes openCourtain {
+    0%{
+        width: 50%;
+    }
+    100%{
+        width: 0%;
+    }
+}
+
+.navi{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.items{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.items-list{
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.item{
+    padding-right: 1rem;
+}
+
+.item:last-child{
+    padding: 0;
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    background-image: url("pngwing.png");
+    background-repeat: no-repeat;
+}
+$text-color: rgba(219, 66, 66, .9);
+
+.text{
+    width: 25rem;
+    height: 10rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 1rem;
+    background-color: $text-color;
+    color: white;
+    border-radius: 1rem;
+    
+    transition: all 1s;
+
+    &:hover{
+        // background-color: rgba(195, 58, 58, 0.4);
+        background-color: rgba(219, 66, 66, 0.5);
+        color: white;
+        .description{
+            color: white;
+        }
+    }
+
+    .description{
+        margin-top: 1rem;
+        color: $text-color;
+        transition: all 1s;
+    }
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+
+.button{
+    height: 2rem;
+    width: 5rem;
+    margin: 0;
+    border: none;
+    border-radius: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(219, 66, 66);
+    transition: all 1s;
+    color: white;
+
+    &:hover{
+        
+        background-color: rgb(245, 66, 66);
+    }
+}
+
+.the-form input{
+    // margin: 0.3rem;
+    margin-top: .3rem;
+    opacity: 1;
+    box-sizing: border-box;
+}
+
+.form-input{
+    width: 20rem;
+    // border-radius: 5rem;
+    border: none;
+    padding: 1rem 0.8rem; 
+    border-radius: .2rem;
+}
+
+.form-text{
+    height: 8rem;
+    resize: none;
+    font-family: $font-text;
+    margin-top: 3.5rem;
+}
+
+.appear{
+    animation: appear 1s 1s forwards;
+}
+
+.dissapear{
+    animation: dissapear 1s 0s forwards;
+}
